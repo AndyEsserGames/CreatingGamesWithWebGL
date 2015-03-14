@@ -1,0 +1,30 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #ccc;
+	font-family: sans-serif;
+}
+
+.game-title {
+	color: #000;
+	font-size: 16px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	text-align: center;
+}
+
+.game-container {
+	width: 640px;
+	height: 480px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #000;
+}
+
+.game-canvas {
+	width: 100%;
+	height: 100%;
+}
