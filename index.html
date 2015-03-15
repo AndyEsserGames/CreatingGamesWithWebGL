@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>Creating Games With WebGL :: Example 1 :: Hello Polygon</title>
 
@@ -13,6 +13,24 @@
 		</div>
 
 		<script src="js/vendor/jquery.js"></script>
+		<script src="js/vendor/glMatrix.js"></script>
 		<script src="js/game.js"></script>
+
+		<script id="shader-vs" type="x-shader/x-vertex">
+			attribute vec3 aVertexPosition;
+
+			uniform mat4 uMVMatrix;
+			uniform mat4 uPMatrix;
+
+			void main(void) {
+				gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+			}
+		</script>
+
+		<script id="shader-fs" type="x-shader/x-fragment">
+			void main(void) {
+				gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+			}
+		</script>
 	</body>
 </html>
